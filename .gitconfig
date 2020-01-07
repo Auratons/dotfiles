@@ -1,0 +1,7 @@
+[user]
+	email = kremelt@gmail.com
+	name = Tomas Kremel
+[push]
+	default = simple
+[core]
+	editor = vim
