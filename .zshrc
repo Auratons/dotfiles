@@ -120,9 +120,10 @@ compinit -C
 
 # Load all machine-specific or nonpublic aliases 
 CONFIGS=`find ${ZSH_CUSTOM}/machine-specific/ -name '*.zsh'`
-if [[ `echo ${CONFIGS} | wc -l` -ne 0 ]]
+if [[ `echo -n ${CONFIGS} | wc -l` -ne 0 ]]
 then
     for config_file in "${CONFIGS}"; do
+        echo $config_file
         source "$config_file"
     done
 fi
