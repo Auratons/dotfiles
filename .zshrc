@@ -6,6 +6,10 @@ export ZSH="${HOME}/.oh-my-zsh"
 export ZSH_CUSTOM="${HOME}/.oh-my-zsh-custom"
 export PATH="/opt/miniconda3/bin:.local/bin/:${PATH}"
 
+export ZSH_TMUX_AUTOSTART=true
+export ZSH_TMUX_UNICODE=true
+export ZSH_TMUX_autoconnect=false
+
 # Needed by Powerlevel9k theme -- load awesome-terminal-fonts patched version of fonts.
 source ~/.local/share/fonts/awesome-terminal-fonts/*.sh
 
