@@ -7,7 +7,7 @@ export ZSH_CUSTOM="${HOME}/.oh-my-zsh-custom"
 export PATH="/opt/miniconda3/bin:.local/bin/:${PATH}"
 
 # Needed by Powerlevel9k theme -- load awesome-terminal-fonts patched version of fonts.
-source ~/.fonts/awesome-terminal-fonts/*.sh
+source ~/.local/share/fonts/awesome-terminal-fonts/*.sh
 
 # Alias for managing dotfiles.
 alias dotcfg='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
