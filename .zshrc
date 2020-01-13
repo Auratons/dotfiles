@@ -3,11 +3,15 @@
 # Path to your oh-my-zsh installation.
 export DOT="${HOME}/.dotfiles"
 export ZSH="${HOME}/.oh-my-zsh"
+export ZSH_CUSTOM="${HOME}/.oh-my-zsh-custom"
+export PATH="/opt/miniconda3/bin:.local/bin/:${PATH}"
 
-export PATH=.local/bin/:${PATH}
-source /home/auratons/.local/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
 # Needed by Powerlevel9k theme -- load awesome-terminal-fonts patched version of fonts.
 source ~/.fonts/awesome-terminal-fonts/*.sh
+
+# Alias for managing dotfiles.
+alias dotcfg='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -61,11 +65,17 @@ export UPDATE_ZSH_DAYS=7
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git
+    tig
     git-flow
     docker
+    docker-compose
     python
     pip
+    autopep8
+    pep8
+    colored-man-pages
+    tmux
+    ubuntu
 )
 
 source ~/.oh-my-zsh/oh-my-zsh.sh
@@ -108,15 +118,11 @@ for dump in ~/.zcompdump(N.mh+24); do
 done
 compinit -C
 
-# Load all aliases 
-for config_file in ~/.aliases/*.zsh; do
-    source "$config_file"
-done
-
 # Load all machine-specific or nonpublic aliases 
-if [[ `find ~/.aliases/machine-specific/ -name '*.zsh'` -ne 0 ]]
+CONFIGS=`find ${ZSH_CUSTOM}/machine-specific/ -name '*.zsh'`
+if [[ `echo ${CONFIGS} | wc -l` -ne 0 ]]
 then
-    for config_file in ~/.aliases/machine-specific/*.zsh; do
+    for config_file in "${CONFIGS}"; do
         source "$config_file"
     done
 fi
