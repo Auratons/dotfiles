@@ -11,7 +11,7 @@ export ZSH_TMUX_UNICODE=true
 export ZSH_TMUX_autoconnect=false
 
 # Needed by Powerlevel9k theme -- load awesome-terminal-fonts patched version of fonts.
-source ~/.local/share/fonts/awesome-terminal-fonts/*.sh
+#source ~/.local/share/fonts/awesome-terminal-fonts/*.sh
 
 # Alias for managing dotfiles.
 alias dotcfg='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -126,8 +126,8 @@ compinit -C
 CONFIGS=`find ${ZSH_CUSTOM}/machine-specific/ -name '*.zsh'`
 if [[ `echo -n ${CONFIGS} | wc -l` -ne 0 ]]
 then
-    for config_file in "${CONFIGS}"; do
-        echo $config_file
+    for config_file in `find ${ZSH_CUSTOM}/machine-specific/ -name '*.zsh'`; do
+        echo "Sourcing local ${config_file}"
         source "$config_file"
     done
 fi
