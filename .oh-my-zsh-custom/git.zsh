@@ -9,6 +9,7 @@ alias gce='git checkout'
 alias gba='git branch -a'
 alias glg='git log --branches --remotes --tags --graph --oneline --decorate'
 alias gsm='gst -suno | sed -E "s/[[:blank:]]?M[[:blank:]]//"'
+alias grh='git reset HEAD'
 
 # Git Flow aliases
 alias gff='git flow feature'
