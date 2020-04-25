@@ -235,6 +235,7 @@ plugins=(
     colored-man-pages
     tmux
     ubuntu
+    zsh-completions
 )
 
 source ~/.oh-my-zsh/oh-my-zsh.sh
