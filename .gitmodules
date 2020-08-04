@@ -1,9 +1,9 @@
 [submodule "oh-my-zsh"]
 	path = .oh-my-zsh
-	url = git@github.com:ohmyzsh/ohmyzsh.git
+	url = https://github.com/ohmyzsh/ohmyzsh.git
 [submodule "powerlevel10k"]
 	path = .oh-my-zsh-custom/themes/powerlevel10k
-	url = git@github.com:romkatv/powerlevel10k.git
+	url = https://github.com/romkatv/powerlevel10k.git
 [submodule "zsh-completions"]
 	path = .oh-my-zsh-custom/plugins/zsh-completions
 	url = https://github.com/zsh-users/zsh-completions
