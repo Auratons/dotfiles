@@ -1,5 +1,5 @@
 # dotfiles
-Dotfiles meant to be used in Z shell with oh-my-zsh and powerlevel9k theme.
+Dotfiles meant to be used in Z shell with oh-my-zsh and powerlevel10k theme.
 
 For installation, you can use the following in your home directory:
 
