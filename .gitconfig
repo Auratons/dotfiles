@@ -5,3 +5,7 @@
 	default = simple
 [core]
 	editor = vim
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
