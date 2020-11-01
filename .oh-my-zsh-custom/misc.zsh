@@ -4,8 +4,12 @@ alias vlna='vlna -r -v KkSsVvZzOoUuAaIi'
 alias rm='rm -i'
 alias jobs='jobs -l'
 alias tensorboard='tensorboard --logdir .'
-alias reload='source ~/.zshrc'
 alias la='ls -alFh'
+
+function reload() {
+    source ~/.zshrc
+    tmux source-file ~/.tmux.conf
+}
 
 # pip zsh completion start
 function _pip_completion {
