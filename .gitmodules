@@ -7,3 +7,6 @@
 [submodule "zsh-completions"]
 	path = .oh-my-zsh-custom/plugins/zsh-completions
 	url = https://github.com/zsh-users/zsh-completions
+[submodule "tpm"]
+	path = .tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
