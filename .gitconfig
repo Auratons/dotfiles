@@ -9,3 +9,10 @@
 	tool = vscode
 [mergetool "vscode"]
 	cmd = code --wait $MERGED
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = true
+  pager = true
