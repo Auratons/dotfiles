@@ -236,6 +236,7 @@ plugins=(
     tmux
     ubuntu
     zsh-completions
+    conda-zsh-completion
 )
 
 source ~/.oh-my-zsh/oh-my-zsh.sh
@@ -257,3 +258,6 @@ then
         source "$config_file"
     done
 fi
+
+zstyle ":conda_zsh_completion:*" show-unnamed true
+ 
