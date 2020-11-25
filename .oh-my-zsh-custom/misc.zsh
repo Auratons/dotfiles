@@ -5,6 +5,7 @@ alias rm='rm -i'
 alias jobs='jobs -l'
 alias tensorboard='tensorboard --logdir .'
 alias la='ls -alFh'
+alias l='ls -lFh'
 
 function reload() {
     source ~/.zshrc
