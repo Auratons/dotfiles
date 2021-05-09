@@ -6,8 +6,8 @@
 # interpreted as binstar usernames (this can be changed by modifying the
 # channel_alias key; see below).
 channels:
-  - defaults
   - conda-forge 
+  - defaults
 #  - binstar_username
 #  - http://some.custom/channel
 
