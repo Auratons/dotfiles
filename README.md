@@ -47,16 +47,13 @@ mkdir ~/.linuxbrew/bin
 ln -s ~/.linuxbrew/Homebrew/bin/brew ~/.linuxbrew/bin
 eval $(~/.linuxbrew/bin/brew shellenv)  # Add this also to zshrc
 
-# Install newest tmux
-brew install tmux
-
-# Install specific version of tmux, if needed
+brew tap homebrew/homebrew-core
 cd "$(brew --repo homebrew/core)"
-git log master -- Formula/tmux.rb  # Find SHA of commit of requested version
-gce <commit_sha>
-scp Formula/tmux.rb <local>
+git log master -- Formula/tmux.rb  # Find SHA of commit with tmux 2.8
+gce b3bd700d9 # <commit_sha>
+cp Formula/tmux.rb <local>
 gce -
-scp <local> Formula/tmux.rb
+cp <local> Formula/tmux.rb
 brew install tmux
 brew pin tmux
 brew list --pinned
