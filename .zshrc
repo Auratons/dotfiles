@@ -239,6 +239,13 @@ plugins=(
     conda-zsh-completion
 )
 
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
 source ~/.oh-my-zsh/oh-my-zsh.sh
 
 # https://medium.com/@dannysmith/little-thing-2-speeding-up-zsh-f1860390f92
