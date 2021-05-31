@@ -8,10 +8,10 @@ alias tensorboard='tensorboard --logdir .'
 
 if type exa >/dev/null; then
     # general use
-    alias ls=' exa'
-    alias l='  exa --long --group --binary --classify --group-directories-first'
-    alias la=' exa --long --group --binary --classify --group-directories-first --all'
-    alias ll=' exa -lbhHigUmuSa --time-style=long-iso --color-scale'
+    alias ls='exa'
+    alias l='exa --long --group --binary --classify --group-directories-first'
+    alias la='exa --long --group --binary --classify --group-directories-first --all'
+    alias ll='exa -lbhHigUmuSa --time-style=long-iso --color-scale'
     alias llm='exa --long --group --binary --classify --sort=modified'
 
     # speciality views
