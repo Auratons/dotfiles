@@ -15,6 +15,7 @@ fi
 
 # Alias for managing dotfiles.
 alias dotcfg='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias tigcfg='GIT_DIR=$HOME/.dotfiles/ WORK_TREE=$HOME tig'
 
 autoload -Uz is-at-least && is-at-least 5.1 || return
 
