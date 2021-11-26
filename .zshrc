@@ -5,10 +5,16 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_UNICODE=true
-ZSH_TMUX_AUTOCONNECT=false
+ZSH_TMUX_AUTOCONNECT=true
+
+if [ -d ".homebrew" ]; then
+    export HOMEBREW_MAKE_JOBS=16
+    export HOMEBREW_NO_ANALYTICS=1
+    eval $($HOME/.homebrew/bin/brew shellenv)
+fi
 
 # Alias for managing dotfiles.
-alias dotcfg='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotcfg='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 autoload -Uz is-at-least && is-at-least 5.1 || return
 
