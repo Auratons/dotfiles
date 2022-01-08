@@ -10,12 +10,12 @@ ZSH_TMUX_AUTOCONNECT=true
 if [ -d ".homebrew" ]; then
     export HOMEBREW_MAKE_JOBS=16
     export HOMEBREW_NO_ANALYTICS=1
-    eval $($HOME/.homebrew/bin/brew shellenv)
+    eval $(${HOME}/.homebrew/bin/brew shellenv)
 fi
 
 # Alias for managing dotfiles.
-alias dotcfg='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias tigcfg='GIT_DIR=$HOME/.dotfiles/ WORK_TREE=$HOME tig'
+alias dotcfg='git --git-dir="${HOME}/.dotfiles/" --work-tree="${HOME}"'
+alias tigcfg='GIT_DIR="${HOME}/.dotfiles/" WORK_TREE="${HOME}" tig'
 
 autoload -Uz is-at-least && is-at-least 5.1 || return
 

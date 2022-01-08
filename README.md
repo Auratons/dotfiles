@@ -10,7 +10,7 @@ For **installation on a remote machine and as the last step on the fresh local m
 you should use/reproduce the following in your home directory:
 
 ```bash
-curl https://gist.githubusercontent.com/Auratons/2db1bd338f79bc0e7edc26ee2cf07d48/raw/912693afe40f5af3add4e5cdfa7abbfdcc6a6598/dotfiles-install.sh | /bin/bash
+curl https://gist.githubusercontent.com/Auratons/2db1bd338f79bc0e7edc26ee2cf07d48/raw/a5594edc38c2259254d7c51b2db07bcf8af1e53e/dotfiles-install.sh | /bin/bash
 ```
 
 This repository was created by following a great article
