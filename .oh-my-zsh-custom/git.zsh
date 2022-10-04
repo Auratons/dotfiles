@@ -12,6 +12,7 @@ alias gsm='gst -suno | sed -E "s/[[:blank:]]?M[[:blank:]]//"'
 alias grh='git reset HEAD'
 alias gu='git fetch --all --tags --prune  &&  git merge --ff-only @{u}'
 alias gud='git fetch --all --tags --prune  &&  git rebase origin/develop'
+alias grs='git restore --staged'
 
 # Git Flow aliases
 alias gff='git flow feature'
