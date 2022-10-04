@@ -5,9 +5,22 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_UNICODE=true
-ZSH_TMUX_AUTOCONNECT=true
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then  # [[ -v P9K_SSH ]]; then
+    ZSH_TMUX_AUTOCONNECT=true
+else
+    ZSH_TMUX_AUTOCONNECT=false
+fi
 
 if [ -d ".homebrew" ]; then
+    alias tmux='${HOME}/.homebrew/bin/tmux'
+    alias vim='${HOME}/.homebrew/bin/vim'
+    alias git='${HOME}/.homebrew/opt/git/bin/git'
+    if [ -d "${HOME}/tools/exa/bin/" ]; then
+        alias exa='${HOME}/tools/exa/bin/exa'
+    fi
+
+	export HOMEBREW_FORCE_BREWED_CURL=1
+	export HOMEBREW_FORCE_BREWED_GIT=1
     export HOMEBREW_MAKE_JOBS=16
     export HOMEBREW_NO_ANALYTICS=1
     eval $(${HOME}/.homebrew/bin/brew shellenv)
