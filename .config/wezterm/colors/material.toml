@@ -1,0 +1,38 @@
+# Material Wezterm Colors
+# Upstream: https://raw.githubusercontent.com/MartinSeeler/iterm2-material-design/master/material-design-colors.itermcolors
+# Inspiration for syntax: https://github.com/dracula/wezterm/blob/main/dracula.toml
+
+
+[colors]
+foreground    = "#e7ebed"
+background    = "#1d262a"
+cursor_bg     = "#ffffff"
+cursor_border = '#ffffff'
+cursor_fg     = 'rgba(0.91648769378662109, 0.91671288013458252, 0.91654461622238159, 0.5)'
+selection_bg  = 'rgba(26.666668% 27.843138% 35.294117% 50%)'
+selection_fg  = 'rgba(0% 0% 0% 0%)'
+ansi = [
+  "#435b67", # black
+  "#fc3841", # maroon
+  "#5cf19e", # green
+  "#fed032", # olive
+  "#37b6ff", # navy
+  "#fc226e", # purple
+  "#59ffd1", # teal
+  "#ffffff"  # silver
+]
+brights = [
+  "#a1b0b8", # grey
+  "#fc746d", # red
+  "#adf7be", # lime
+  "#fee16c", # yellow
+  "#70cfff", # blue
+  "#fc669b", # fuchsia
+  "#9affe6", # aqua
+  "#ffffff"  # white
+]
+
+
+[metadata]
+name = 'material'
+origin_url = 'https://raw.githubusercontent.com/MartinSeeler/iterm2-material-design/master/material-design-colors.itermcolors'
