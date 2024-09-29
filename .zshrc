@@ -4,12 +4,15 @@ ZSH_CUSTOM="${HOME}/.oh-my-zsh-custom"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOSTART_ONCE=true
 ZSH_TMUX_UNICODE=true
-if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then  # [[ -v P9K_SSH ]]; then
-    ZSH_TMUX_AUTOCONNECT=true
-else
-    ZSH_TMUX_AUTOCONNECT=false
-fi
+ZSH_TMUX_AUTOCONNECT=true
+ZSH_TMUX_AUTOQUIT=true
+# if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then  # [[ -v P9K_SSH ]]; then
+#     ZSH_TMUX_AUTOCONNECT=true
+# else
+#     ZSH_TMUX_AUTOCONNECT=false
+# fi
 
 if [ -d ".homebrew" ]; then
     alias tmux='${HOME}/.homebrew/bin/tmux'
@@ -288,3 +291,7 @@ fi
 
 zstyle ":conda_zsh_completion:*" show-unnamed true
  
+
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
+
