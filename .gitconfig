@@ -1,18 +1,28 @@
 [user]
 	email = kremelt@gmail.com
-	name = Tomas Kremel
+	name  = Tomas Kremel
+
 [push]
-	default = simple
+    default         = simple
+    autoSetupRemote = true
+
+
 [core]
 	editor = vim
+
 [merge]
 	tool = vscode
+
 [mergetool "vscode"]
 	cmd = code --wait $MERGED
+
 [color]
-  diff = auto
-  status = auto
-  branch = auto
-  interactive = auto
-  ui = true
-  pager = true
+    diff        = auto
+    status      = auto
+    branch      = auto
+    interactive = auto
+    ui          = true
+    pager       = true
+
+[include]
+    path = "~/.oh-my-zsh-custom/machine-specific/gitconfig"
