@@ -1,6 +1,6 @@
 export ZSH="${HOME}/.oh-my-zsh"
+export ZSH_CUSTOM="${HOME}/.oh-my-zsh-custom"
 
-ZSH_CUSTOM="${HOME}/.oh-my-zsh-custom"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 ZSH_TMUX_AUTOSTART=true
@@ -8,16 +8,19 @@ ZSH_TMUX_AUTOSTART_ONCE=true
 ZSH_TMUX_UNICODE=true
 ZSH_TMUX_AUTOCONNECT=true
 ZSH_TMUX_AUTOQUIT=true
-# if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then  # [[ -v P9K_SSH ]]; then
-#     ZSH_TMUX_AUTOCONNECT=true
-# else
-#     ZSH_TMUX_AUTOCONNECT=false
-# fi
 
-if [ -d ".homebrew" ]; then
-    alias tmux='${HOME}/.homebrew/bin/tmux'
-    alias vim='${HOME}/.homebrew/bin/vim'
-    alias git='${HOME}/.homebrew/opt/git/bin/git'
+if [[ -d "/opt/homebrew" || -d "${HOME}/.homebrew" ]]; then
+    if [[ -d "/opt/homebrew" ]]; then
+        BREW_HOME='/opt/homebrew'
+    else
+        BREW_HOME='${HOME}/.homebrew'
+    fi
+
+    for binary in tmux vim git; do
+        if [ -f "${BREW_HOME}/bin/${binary}" ]; then
+            alias ${binary}="${BREW_HOME}/bin/${binary}"
+        fi
+    done
     if [ -d "${HOME}/tools/exa/bin/" ]; then
         alias exa='${HOME}/tools/exa/bin/exa'
     fi
@@ -26,7 +29,7 @@ if [ -d ".homebrew" ]; then
 	export HOMEBREW_FORCE_BREWED_GIT=1
     export HOMEBREW_MAKE_JOBS=16
     export HOMEBREW_NO_ANALYTICS=1
-    eval $(${HOME}/.homebrew/bin/brew shellenv)
+    eval $(${BREW_HOME}/bin/brew shellenv)
 fi
 
 # Alias for managing dotfiles.
