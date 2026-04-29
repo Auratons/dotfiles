@@ -3,10 +3,16 @@ export ZSH_CUSTOM="${HOME}/.oh-my-zsh-custom"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-ZSH_TMUX_AUTOSTART=true
+# Disable tmux autostart in VS Code integrated terminal
+if [[ "$TERM_PROGRAM" == "vscode" ]]; then
+  ZSH_TMUX_AUTOSTART=false
+  ZSH_TMUX_AUTOCONNECT=false
+else
+  ZSH_TMUX_AUTOSTART=true
+  ZSH_TMUX_AUTOCONNECT=true
+fi
 ZSH_TMUX_AUTOSTART_ONCE=true
 ZSH_TMUX_UNICODE=true
-ZSH_TMUX_AUTOCONNECT=true
 ZSH_TMUX_AUTOQUIT=true
 
 if [[ -d "/opt/homebrew" || -d "${HOME}/.homebrew" ]]; then

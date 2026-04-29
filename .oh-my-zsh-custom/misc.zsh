@@ -5,6 +5,7 @@ alias rm='rm -i'
 alias jobs='jobs -l'
 alias tensorboard='tensorboard --logdir .'
 
+export AWS_PAGER=""
 
 if type exa >/dev/null; then
     # general use
@@ -39,3 +40,11 @@ function _pip_completion {
 compctl -K _pip_completion pip
 # pip zsh completion end
 
+# Decode AWS STS authorization message
+function decode-aws-message() {
+    if [ -z "$1" ]; then
+        echo "Usage: decode-aws-message <encoded-message>"
+        return 1
+    fi
+    aws sts decode-authorization-message --encoded-message "$1" | jq -r '.DecodedMessage' | tr -d '\'
+}
